@@ -4,6 +4,9 @@ $(document).ready(function() {
 
 var playFizzBuzz = function() {
 	var playCount = prompt("Please enter a number");
+	while(isValidNumber(playCount) != true){ 
+		playCount = prompt("Sorry, please enter a valid number");
+	}
 	for (var count = 1; count <= playCount; count++){
 		if (isFizzBuzz(count)) {
 			showScore("Fizz Buzz");
@@ -37,4 +40,12 @@ var isFizzBuzz = function(number) {
 var showScore = function(score) {
 	var newP = $("<span>" + score + ",\t\t" + "</span>");
 	$('body').append(newP);
+}
+
+var isValidNumber = function(input) {
+	if(input % 1 == 0){
+		return true;
+	} else {
+		return false;
+	}
 }
