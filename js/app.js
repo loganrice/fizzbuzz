@@ -3,9 +3,8 @@ $(document).ready(function() {
 })
 
 var playFizzBuzz = function() {
-	var fizz = false;
-	var buzz = false;
-	for (var count = 1; count <= 50; count++){
+	var playCount = prompt("Please enter a number");
+	for (var count = 1; count <= playCount; count++){
 		if (isFizzBuzz(count)) {
 			showScore("Fizz Buzz");
 		} else if (isFizz(count)){
@@ -36,6 +35,6 @@ var isFizzBuzz = function(number) {
 	} else { return false; }
 }
 var showScore = function(score) {
-	var newP = $("<span>" + score + ",\t" + "</span>");
+	var newP = $("<span>" + score + ",\t\t" + "</span>");
 	$('body').append(newP);
 }
